@@ -1,0 +1,32 @@
+cabal-version:      3.6
+name:               haskellsolutions
+version:            0.1.0.0
+author:             Dzmitry L.
+maintainer:         dima.lenchevskii@gmail.com
+extra-source-files: CHANGELOG.md
+
+library
+  exposed-modules:
+    Easy.ReverseWords
+
+  build-depends:
+    , base              ^>=4.16.4.0
+
+  hs-source-dirs:   src
+  default-language: Haskell2010
+
+executable haskellsolutions
+  main-is:          Main.hs
+  build-depends:
+    , base               ^>=4.16.4.0
+    , haskellsolutions
+
+  hs-source-dirs:   app
+  default-language: Haskell2010
+
+-- test-suite haskellsolutions-tests
+--   default-language: Haskell2010
+--   type:             exitcode-stdio-1.0
+--   hs-source-dirs:   tests src
+--   main-is:          THExample.hs
+--   build-depends:    base ^>=4.16.4.0
