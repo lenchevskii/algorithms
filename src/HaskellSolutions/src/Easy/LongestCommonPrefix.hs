@@ -1,7 +1,7 @@
 module Easy.LongestCommonPrefix where
 
 longestCommonPrefix :: [String] -> String
-longestCommonPrefix (x:xs) = foldl1 longestCommonPrefixH xs
+longestCommonPrefix = foldl1 longestCommonPrefixH
   where
     longestCommonPrefixH :: String -> String -> String
     longestCommonPrefixH _ [] = []
