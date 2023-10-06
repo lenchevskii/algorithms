@@ -28,5 +28,26 @@ object LongestSubstring extends App {
     go(s.toList, Nil).mkString
   }
 
-  // println(lengthOfLongestSubstring("abcaagbf"))
+  /** Using an array to store `ASCII` character indexes. ChatGPT solution.
+    */
+  def lengthOfLongestSubstringG(s: String): Int = {
+    val n = s.length
+    var maxLength = 0
+    var start = 0
+    val charIndex =
+      Array.fill(256)(-1)
+
+    for (end <- 0 until n) {
+      val char = s(end)
+      if (charIndex(char) >= start) {
+        start = charIndex(char) + 1
+      }
+      charIndex(char) = end
+      maxLength = Math.max(maxLength, end - start + 1)
+    }
+
+    maxLength
+  }
+
+  println(lengthOfLongestSubstringG("abcaagbf"))
 }
